@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('loginFormbg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 5px;
+    padding-top: 50px;
+  }
+  
+  .signup {
+    
+    margin: auto;
+  
+    padding: 20px;
+    
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  h4 {
+    text-align: center;
+    padding-top: 15px;
+  }
+  
+  form {
+    width: flex;
+    
+    flex-direction: column;
+    padding: 5px;
+    width: 50%;
+    padding: 5px;
+    justify-content: center;
+    background-color: #f9f9f9;
+    padding: 50px;
+    border-radius: 0px;
+    width: 400px;
+    padding-bottom: 20;
+
+   
+    left: -14%;
+    top: 45%;
+    margin-left: 50%;
+    position:fixed;
+    margin-top: -10%;
+   
+  }
+  
+  form label {
+    display: flex;
+    margin-top: 20px;
+    font-size: 13px;
+    
+  }
+  
+  form input {
+    width: 50%;
+    padding: 3px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+  
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: none;
+    background: #ccc;
+    color: black;
+    cursor: pointer;
+    font-weight: bold
+  }
+  
+  input[type="submit"]:hover {
+    background: #a82222;
+  }
+  
+  
+  .error {
+    color: red;
+  }
+  h1{
+    font-size: smaller ;
+  }
+  
