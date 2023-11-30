@@ -17,7 +17,7 @@ table {
     text-align: center;
 }
 thead {
-    background-color: red;
+    background-color: #A82222;
     color: #fff;
 }
 tbody {
@@ -58,7 +58,7 @@ button, select {
     cursor: white;
     outline: none;
     border-width: 0;
-    background-color: red;
+    background-color: #A82222;
     font-weight: 600;
     width: 150px;
 }
