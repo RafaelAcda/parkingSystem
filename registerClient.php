@@ -395,7 +395,7 @@
                                 $guestDatafName = strtolower($guestData['firstname']);
                             } else {
                                 $guestDatafName = '';
-                                $guestDatalName = '';
+                                $guestDatalName = ''; 
                             }
                             
                             //  If guest exists within the database

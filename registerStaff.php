@@ -2,6 +2,7 @@
     $fName = $lName = $Department = $Username = $Password = '';
     $fName_err = $lName_err = $Department_err = $Username_err = $Password_err = '';
     $complete = 0;
+    $Status = '';
     if(isset($_POST['submit'])) {
 
         //      Check if any info is missing
@@ -72,9 +73,9 @@
                 $insertStaffstmt->bind_param("sss", $row['empid'], $Username, $Password);
                 $insertStaffstmt->execute();
 
-                echo "Record inserted successfully.";
+                $Status = "Record inserted successfully.";
             } else {
-                echo "Data already exists in the database.";
+                $Status = "Data already exists in the database.";
             }
             $conn->close();
         }
@@ -94,7 +95,8 @@
     
        
         <form method="POST">
-        <h1>Register your information by using this form. <br> Required fields are marked with an astrerisk (*).</h1><br><br>
+        <h1>Register your information by using this form. <br> Required fields are marked with an astrerisk (*).</h1><br>
+        <?php echo $Status?><br>
    
      
             First Name: <input type="text" name="fName" value = <?php echo isset($_POST["fName"]) ? $_POST["fName"] : ''; ?>>
