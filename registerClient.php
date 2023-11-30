@@ -572,7 +572,7 @@
                 <option value ="3">Guest</option>
             </select>
             <br><br>
-            OR/CR: <input type="file" name="file">
+            OR/CR: <input type="file" name="file"><br>
             <input type = "submit" name = "submit" value = "Submit">
             <a href = "adminForm.php" class = "button">Go back</a>
         </form>

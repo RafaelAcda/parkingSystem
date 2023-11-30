@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `tbempinfo` (
   `firstname` varchar(25) NOT NULL,
   `department` varchar(20) NOT NULL,
   PRIMARY KEY (`empid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbempinfo`
@@ -164,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `tbl_account` (
   `userPass` varchar(255) NOT NULL,
   `userType` varchar(255) NOT NULL,
   PRIMARY KEY (`userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `tbl_office` (
   `employeeID` int NOT NULL,
   PRIMARY KEY (`officeAccID`),
   KEY `empID(FK)` (`employeeID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -202,7 +202,7 @@ CREATE TABLE IF NOT EXISTS `tbl_reqhistory` (
   KEY `userID_FK(tbl_reqH)` (`orgID`),
   KEY `reqID_FK(tbl_reqH)` (`reqID`),
   KEY `officeID(tbl_reqH)` (`officeID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -213,15 +213,15 @@ CREATE TABLE IF NOT EXISTS `tbl_reqhistory` (
 DROP TABLE IF EXISTS `tbl_requests`;
 CREATE TABLE IF NOT EXISTS `tbl_requests` (
   `reqID` int NOT NULL AUTO_INCREMENT,
-  `reqEventName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `reqEventName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `reqLetter` longblob NOT NULL,
   `reqEventDate` date NOT NULL,
   `reqDeadline` date NOT NULL,
   `userID` int NOT NULL,
-  `currentOffice` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'Program Chair',
+  `currentOffice` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'Program Chair',
   PRIMARY KEY (`reqID`),
   KEY `userID(tbl_req)` (`userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
