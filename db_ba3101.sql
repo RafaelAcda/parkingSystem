@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 30, 2023 at 01:49 AM
--- Server version: 8.2.0
--- PHP Version: 8.2.13
+-- Generation Time: Nov 30, 2023 at 04:03 PM
+-- Server version: 8.0.31
+-- PHP Version: 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS `tbadmin` (
 
 INSERT INTO `tbadmin` (`emp_ID`, `userName`, `Password`) VALUES
 (1, 'admin', '123');
+
 -- --------------------------------------------------------
 
 --
@@ -85,9 +86,9 @@ INSERT INTO `tbclient` (`plate_Number`, `vehicle_Type`, `student_ID`, `emp_ID`, 
 DROP TABLE IF EXISTS `tbempinfo`;
 CREATE TABLE IF NOT EXISTS `tbempinfo` (
   `empid` int NOT NULL AUTO_INCREMENT,
-  `lastname` varchar(25) NOT NULL,
-  `firstname` varchar(25) NOT NULL,
-  `department` varchar(20) NOT NULL,
+  `lastname` varchar(25) COLLATE utf8mb4_general_ci NOT NULL,
+  `firstname` varchar(25) COLLATE utf8mb4_general_ci NOT NULL,
+  `department` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`empid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -145,81 +146,6 @@ INSERT INTO `tblogs` (`plate_Number`, `recordDate`, `time_In`, `time_Out`) VALUE
 ('DAD-808', '2023-11-08', '10:06:07', '10:06:29'),
 ('BAV-163', '2023-11-08', '10:06:05', '13:34:43'),
 ('VFA-175', '2023-11-21', '10:19:30', '10:31:31');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_account`
---
-
-DROP TABLE IF EXISTS `tbl_account`;
-CREATE TABLE IF NOT EXISTS `tbl_account` (
-  `userID` int NOT NULL AUTO_INCREMENT,
-  `userImg` longblob NOT NULL,
-  `userName` varchar(255) NOT NULL,
-  `userDept` varchar(255) NOT NULL,
-  `userEmail` varchar(255) NOT NULL,
-  `userPass` varchar(255) NOT NULL,
-  `userType` varchar(255) NOT NULL,
-  PRIMARY KEY (`userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_office`
---
-
-DROP TABLE IF EXISTS `tbl_office`;
-CREATE TABLE IF NOT EXISTS `tbl_office` (
-  `officeAccID` int NOT NULL AUTO_INCREMENT,
-  `officeImg` longblob NOT NULL,
-  `designation` varchar(255) NOT NULL,
-  `officeEmail` varchar(255) NOT NULL,
-  `officePass` varchar(255) NOT NULL,
-  `employeeID` int NOT NULL,
-  PRIMARY KEY (`officeAccID`),
-  KEY `empID(FK)` (`employeeID`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_reqhistory`
---
-
-DROP TABLE IF EXISTS `tbl_reqhistory`;
-CREATE TABLE IF NOT EXISTS `tbl_reqhistory` (
-  `histID` int NOT NULL AUTO_INCREMENT,
-  `reqStatus` varchar(255) NOT NULL,
-  `statusDate` date NOT NULL,
-  `orgID` int NOT NULL,
-  `reqID` int NOT NULL,
-  `officeID` int NOT NULL,
-  PRIMARY KEY (`histID`),
-  KEY `userID_FK(tbl_reqH)` (`orgID`),
-  KEY `reqID_FK(tbl_reqH)` (`reqID`),
-  KEY `officeID(tbl_reqH)` (`officeID`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_requests`
---
-
-DROP TABLE IF EXISTS `tbl_requests`;
-CREATE TABLE IF NOT EXISTS `tbl_requests` (
-  `reqID` int NOT NULL AUTO_INCREMENT,
-  `reqEventName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `reqLetter` longblob NOT NULL,
-  `reqEventDate` date NOT NULL,
-  `reqDeadline` date NOT NULL,
-  `userID` int NOT NULL,
-  `currentOffice` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'Program Chair',
-  PRIMARY KEY (`reqID`),
-  KEY `userID(tbl_req)` (`userID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -292,26 +218,6 @@ ALTER TABLE `tbclient`
 --
 ALTER TABLE `tblogs`
   ADD CONSTRAINT `plateNo` FOREIGN KEY (`plate_Number`) REFERENCES `tbclient` (`plate_Number`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Constraints for table `tbl_office`
---
-ALTER TABLE `tbl_office`
-  ADD CONSTRAINT `empID(FK)` FOREIGN KEY (`employeeID`) REFERENCES `tbempinfo` (`empid`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Constraints for table `tbl_reqhistory`
---
-ALTER TABLE `tbl_reqhistory`
-  ADD CONSTRAINT `officeID` FOREIGN KEY (`officeID`) REFERENCES `tbl_office` (`officeAccID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `orgID` FOREIGN KEY (`orgID`) REFERENCES `tbl_account` (`userID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `reqID` FOREIGN KEY (`reqID`) REFERENCES `tbl_requests` (`reqID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Constraints for table `tbl_requests`
---
-ALTER TABLE `tbl_requests`
-  ADD CONSTRAINT `userID` FOREIGN KEY (`userID`) REFERENCES `tbl_account` (`userID`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Constraints for table `tbstaff`
