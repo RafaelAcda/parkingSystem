@@ -40,9 +40,7 @@ CREATE TABLE IF NOT EXISTS `tbadmin` (
 --
 
 INSERT INTO `tbadmin` (`emp_ID`, `userName`, `Password`) VALUES
-(1, 'admin', '123'),
 (1, 'admin', '123');
-
 -- --------------------------------------------------------
 
 --
