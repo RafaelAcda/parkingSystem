@@ -30,7 +30,7 @@ form {
 
 input[type="text"],
 input[type="submit"] {
-    width: calc(100% - 22px); /* Adjusting for input padding and border */
+    width: calc(100% - 22px); 
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 5px;
@@ -41,16 +41,16 @@ input[type="submit"] {
 input[type="text"]:focus,
 input[type="submit"]:focus {
     outline: none;
-    border-color: #4caf50; /* Change color on focus */
+    border-color: #A82222; 
 }
 
 input[type="submit"] {
-    background-color: #4caf50;
+    background-color: #A82222;
     color: white;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition on hover */
+    transition: background-color 0.3s ease; 
 }
 
 input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #A82222;
 }
