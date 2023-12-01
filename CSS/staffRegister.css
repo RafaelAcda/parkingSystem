@@ -1,88 +1,70 @@
 body {
-    font-family: Arial, sans-serif;
-    background: url('loginFormbg.jpg') no-repeat center center fixed;
-    background-size: cover;
-    padding: 5px;
-    padding-top: 50px;
-  }
-  
-  .signup {
-    
-    margin: auto;
-  
-    padding: 20px;
-    
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  h4 {
-    text-align: center;
-    padding-top: 15px;
-  }
-  
-  form {
-    width: flex;
-    
-    flex-direction: column;
-    padding: 5px;
-    width: 50%;
-    padding: 5px;
-    justify-content: center;
-    background-color: #f9f9f9;
-    padding: 50px;
-    border-radius: 0px;
-    width: 400px;
-    padding-bottom: 20;
+  font-family: Arial, sans-serif;
+  background: url('bsu_2.png') no-repeat center center fixed;
+  background-size: cover;
+  padding: 5px;
+  padding-top: 50px;
+}
 
-   
-    left: -14%;
-    top: 45%;
-    margin-left: 50%;
-    position:fixed;
-    margin-top: -10%;
-   
-  }
-  
-  form label {
-    display: flex;
-    margin-top: 20px;
-    font-size: 13px;
-    
-  }
-  
-  form input {
-    width: 50%;
-    padding: 3px;
-    border: none;
-    border: 1px solid gray;
-    border-radius: 6px;
-    outline: none;
-  
-  }
-  
-  input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px 0;
-    border: none;
-    background: #ccc;
-    color: black;
-    cursor: pointer;
-    font-weight: bold
-  }
-  
-  input[type="submit"]:hover {
-    background: #a82222;
-  }
-  
-  
-  .error {
-    color: red;
-  }
-  h1{
-    font-size: smaller ;
-  }
-  
+/* staffRegister.css */
+
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f4f4f4;
+}
+
+.signup {
+width: 60%;
+margin: 50px auto;
+background: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+width: 80%;
+margin: 0 auto;
+}
+
+h1 {
+text-align: center;
+color: #333;
+}
+
+.error {
+color: red;
+}
+
+input[type="text"],
+input[type="password"] {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+input[type="submit"],
+.button {
+padding: 10px 20px;
+border: none;
+background: #333;
+color: #fff;
+border-radius: 5px;
+cursor: pointer;
+text-decoration: none;
+display: inline-block;
+margin-right: 10px;
+}
+
+.button {
+background: #f44336;
+}
+
+input[type="submit"]:hover,
+.button:hover {
+background: #555;
+}
