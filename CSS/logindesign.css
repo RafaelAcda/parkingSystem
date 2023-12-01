@@ -2,7 +2,7 @@
 .split-background {
     width: 100%;
     height: 100vh;
-    background-image: url('loginFormbg.jpg');
+    background-image: url('bsu_1.png');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -28,7 +28,7 @@
 
 h2 {
     text-align: center;
-    color: red;
+    color: black;
 }
 
 label {
@@ -49,7 +49,7 @@ select {
 
 button[type='submit'] {
     width: 100%;
-    background-color: red;
+    background-color: #A82222;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -59,12 +59,12 @@ button[type='submit'] {
 }
 
 button[type='submit']:hover {
-    background-color: darkred;
+    background-color: #A82222;
 }
 
 .alert {
     padding: 20px;
-    background-color: #f44336;
+    background-color:#A82222;
     color: white;
     margin-bottom: 15px;
     border-radius: 5px;
